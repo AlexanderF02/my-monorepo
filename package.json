@@ -1,6 +1,14 @@
 {
   "name": "my-monorepo",
   "private": true,
+  "packageManager": "npm@10.9.1",
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -8,17 +16,26 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },
+  "dependencies": {
+    "@strapi/strapi": "^5.29.0"
+  },
   "devDependencies": {
     "prettier": "^3.6.2",
     "turbo": "^2.5.8",
     "typescript": "5.9.2"
   },
-  "engines": {
-    "node": ">=18"
+  "overrides": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5"
   },
-  "packageManager": "npm@10.9.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "resolutions": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5"
+  }
 }
+
+
+
+
